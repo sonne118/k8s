@@ -1,0 +1,63 @@
+fullnameOverride: kedademoapi
+replicaCount: 1
+
+image:
+  repository: __Repository__
+  tag: __BuildNumber__
+
+secrets:
+  connectionstrings:
+    AzureServiceBus__ConnectionString: __AzureServiceBusConnectionString__
+        
+deployment:
+  containerPort: 80
+
+probes:
+  enabled: true
+
+imagePullSecrets:
+  - name: acr-secret
+
+service:
+  type: ClusterIP
+  port: 80
+  
+ingress:
+  enabled: __IngressEnabled__
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    cert-manager.io/cluster-issuer: letsencrypt
+  namespace: __K8sNamespace__
+  path: /  
+  pathType: Prefix
+  hosts:
+    - __URL__
+  tls:
+    - secretName: __TlsSecretName__
+      hosts:
+        - __URL__
+
+resources:
+   limits:
+    cpu: 0.3
+    memory: 128Mi
+   requests:
+    cpu: 100m
+    memory: 64Mi
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+kedascaler:
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  cooldownPeriod: 30
+  queueName: KedaDemo
+  queueLength: "5"
+
+triggerauth:
+  secretName: kedademoapi-connectionstrings
+  secretKey: AzureServiceBus__ConnectionString
