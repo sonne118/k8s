@@ -31,10 +31,10 @@ az acr repository list --name <registry-name> --output table
 az acr repository list --name exploredocker7 --output table
 
      
-    Result
---------
-webapi
-webapp
+	Result
+  --------
+  webapi
+  webapp
 
 -------------------------------------------------
                   create AKS
