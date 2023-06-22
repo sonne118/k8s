@@ -1,28 +1,24 @@
-            Creating and deploy AKS on Azure platform
----------------------------------------------------
+	
+####  Creating and deploy AKS on Azure platform
 az login
 
----------------------------------------------------
-                 Resource Group
----------------------------------------------------
+####  Resource Group
 
 az acr create --name exploredocker7 --resource-group explore-docker-aks-rg --sku basic --admin-enabled
 
+#### Local
 
---------------------------------------------------
-                  Local
---------------------------------------------------
 change tags on docker images
 docker tag webapp:latest exploredocker7.azurecr.io/webapp:v1
 
 exploredocker7.azurecr.io/webapi
 exploredocker7.azurecr.io/webapp
 
---------------------------------------------------
-               login to ACR
---------------------------------------------------
-     az acr login --name exploredocker    
---------------------------------------------------
+
+#### login to ACR
+
+az acr login --name exploredocker    
+
 docker push exploredocker7.azurecr.io/webapi:v1
 
 --------------------------------------------------
@@ -31,14 +27,13 @@ az acr repository list --name <registry-name> --output table
 az acr repository list --name exploredocker7 --output table
 
      
-	Result
-  --------
+ #### Result 
   webapi
   webapp
 
--------------------------------------------------
-                  create AKS
--------------------------------------------------
+
+#### Create AKS
+
 az aks create --resource-group explore-docker-aks-rg --name explore-docker-aks --node-vm-size Standard_B2s --node-count 1 --generate-ssh-keys --location germanywestcentral
 
 
@@ -47,7 +42,7 @@ az aks create --resource-group explore-docker-aks-rg --name explore-docker-aks -
 --work
 az aks create --resource-group explore-docker-aks-rg --name explore-docker-aks --node-vm-size Standard_DS2_v2 --node-count 1 --generate-ssh-keys --location norwayeast
 
--------------------------------------------------
+
 
 ------------------------------------------------
 kubectl get nodes
@@ -159,7 +154,7 @@ az aks start --name explore-docker-aks --resource-group explore-docker-aks-rg
 kubectl config get-contexts
 CURRENT   NAME                 CLUSTER              AUTHINFO                                               NAMESPACE
           docker-desktop       docker-desktop       docker-desktop
-*         explore-docker-aks   explore-docker-aks   clusterUser_explore-docker-aks-rg_explore-docker-aks
+          explore-docker-aks   explore-docker-aks   clusterUser_explore-docker-aks-rg_explore-docker-aks
           minikube             minikube             minikube                                               default
 
  kubectl config use-context docker-desktop
@@ -177,9 +172,9 @@ kubectl get pvc -A
 
 xx.xxx.xx.xx,1433
 
-----------------------------------------------------------------------
-                        dashboard
-----------------------------------------------------------------------
+---
+#### Setting of dashboard
+
 
 To deploy Dashboard, execute following command:
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
