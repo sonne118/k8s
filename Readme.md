@@ -98,13 +98,13 @@ Create a cluster role binding for a particular cluster role.
 -------------------------------------------------------------------
 
      kubectl get deployments
-     NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+     NAME     READY   UP-TO-DATE   AVAILABLE   AGE			
      webapi   1/1     1            1           5d23h
      webapp   1/1     1            1           5d23h
 -------------------------------------------------------------------
 
     kubectl get services
-    NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+    NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE								
     kubernetes   ClusterIP      10.0.0.1       <none>         443/TCP        5d23h
     webapi       ClusterIP      10.0.184.71    <none>         80/TCP         5d23h
     webapp       LoadBalancer   10.0.202.208   20.251.3.178   80:30155/TCP   5d23h
@@ -152,10 +152,12 @@ az aks start --name explore-docker-aks --resource-group explore-docker-aks-rg
 ----------------------------------------------------------------------
 
 kubectl config get-contexts
-CURRENT   NAME                 CLUSTER              AUTHINFO                                               NAMESPACE
-          docker-desktop       docker-desktop       docker-desktop
-          explore-docker-aks   explore-docker-aks   clusterUser_explore-docker-aks-rg_explore-docker-aks
-          minikube             minikube             minikube                                               default
+
+| CURRENT   NAME     | CLUSTER            | AUTHINFO        NAMESPACE                            |
+|--------------------|--------------------|------------------------------------------------------|
+| docker-desktop     | docker-desktop     | docker-desktop                                       |
+| explore-docker-aks | explore-docker-aks | clusterUser_explore-docker-aks-rg_explore-docker-aks |
+| minikube           | minikube           | default                                              |
 
  kubectl config use-context docker-desktop
 
