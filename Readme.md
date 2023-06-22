@@ -19,9 +19,9 @@ exploredocker7.azurecr.io/webapi
 exploredocker7.azurecr.io/webapp
 
 --------------------------------------------------
-login to ACR
+               login to ACR
 --------------------------------------------------
-az acr login --name exploredocker
+     az acr login --name exploredocker    
 --------------------------------------------------
 docker push exploredocker7.azurecr.io/webapi:v1
 
@@ -30,7 +30,8 @@ docker push exploredocker7.azurecr.io/webapi:v1
 az acr repository list --name <registry-name> --output table
 az acr repository list --name exploredocker7 --output table
 
-Result
+     
+    Result
 --------
 webapi
 webapp
@@ -101,17 +102,17 @@ Create a cluster role binding for a particular cluster role.
 
 -------------------------------------------------------------------
 
-kubectl get deployments
-NAME     READY   UP-TO-DATE   AVAILABLE   AGE
-webapi   1/1     1            1           5d23h
-webapp   1/1     1            1           5d23h
+     kubectl get deployments
+     NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+     webapi   1/1     1            1           5d23h
+     webapp   1/1     1            1           5d23h
 -------------------------------------------------------------------
 
-kubectl get services
-NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
-kubernetes   ClusterIP      10.0.0.1       <none>         443/TCP        5d23h
-webapi       ClusterIP      10.0.184.71    <none>         80/TCP         5d23h
-webapp       LoadBalancer   10.0.202.208   20.251.3.178   80:30155/TCP   5d23h
+    kubectl get services
+    NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+    kubernetes   ClusterIP      10.0.0.1       <none>         443/TCP        5d23h
+    webapi       ClusterIP      10.0.184.71    <none>         80/TCP         5d23h
+    webapp       LoadBalancer   10.0.202.208   20.251.3.178   80:30155/TCP   5d23h
 -------------------------------------------------------------------
 kubectl get pods
 
