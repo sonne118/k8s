@@ -1,5 +1,5 @@
 	
-####  Creating and deploy AKS on Azure platform
+####  Creating and deploy App on Azure platform (AKS)
 az login
 
 ####  Resource Group
