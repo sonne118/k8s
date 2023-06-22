@@ -2,22 +2,6 @@
 --------------------------------------------------------------------------
 az login
 
-[
-  {
-    "cloudName": "AzureCloud",
-    "homeTenantId": "f02c869f-4a7f-4d2b-927a-8febb4f38869",
-    "id": "032c27c3-5a3f-4bf4-94d4-fcae6e511182",
-    "isDefault": true,
-    "managedByTenants": [],
-    "name": "Azure subscription 1",
-    "state": "Enabled",
-    "tenantId": "f02c869f-4a7f-4d2b-927a-8febb4f38869",
-    "user": {
-      "name": "xxxxx@xxx.com",
-      "type": "user"
-    }
-  }
-]
 ---------------------------------------------------
                  Resource Group
 ---------------------------------------------------
