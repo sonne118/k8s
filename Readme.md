@@ -1,5 +1,5 @@
 	
-####  Creating and deploy App on Azure platform (AKS)
+####  Creating and deploy Microservices on Azure platform (AKS)
 az login
 
 ####  Resource Group
